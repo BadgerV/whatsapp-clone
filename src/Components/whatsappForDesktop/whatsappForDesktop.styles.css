@@ -1,0 +1,28 @@
+.whatsapp-for-desktop {
+    height: 15vh;
+    background-color:var(--desktop-notification-color);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.whatsapp-for-desktop-icon-part {
+    width: 20%;
+    margin-left: 0.7rem;
+}
+.whatsapp-for-desktop-icon {
+    font-size: 3.5rem;
+    font-weight: lighter;
+}
+
+.whatsapp-for-desktop-h3 {
+    font-weight: lighter;
+    font-size:1.2rem;
+    margin-bottom: 0.2rem;
+}
+
+.whatsapp-for-desktop-h4 {
+    font-size: 0.9rem;
+    font-weight: lighter;
+    margin-top: 0;
+}

@@ -1,0 +1,33 @@
+.title-bar {
+    height: 10vh;
+    width: 100%;
+    background-color: var(--background-color);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.profile-pic {
+    height: 3rem;
+    aspect-ratio: 1 / 1;
+    border-radius: 100%;
+}
+
+.title-bar_profile-pic {
+    margin-left: 1rem;
+}
+.title-bar_icons {
+    display: flex;
+    gap: 1.8rem;
+    margin-left: 11rem;
+    font-size: 1.5rem;
+    color: var(--icon-color);
+    transition: all 1s ease-in;
+}
+
+.title-bar_icon {
+    cursor: pointer;
+}
+.title-bar_icon:hover {
+    color: var(--icon-color-hover);
+}

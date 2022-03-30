@@ -1,0 +1,30 @@
+.search {
+    height: 7vh;
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    padding: 0.4rem;
+}
+
+.search-input {
+    width: 17rem;
+    display: flex;
+    padding-left: 5rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    height: 1.5rem;
+    background-color: var(--color-search-background);
+    border: 0;
+    border-radius: 0.2rem;
+}
+.search-icon {
+    position: absolute;
+    font-size: 1.2rem;
+    font-weight: lighter;
+    top: 11.5rem;
+    left: 1.3rem;
+}
+.search-input:active {
+    outline: none;
+}
