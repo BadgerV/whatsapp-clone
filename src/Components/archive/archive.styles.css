@@ -1,0 +1,28 @@
+.archive {
+    display: flex;
+    height: 6vh;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.archive-icon {
+    margin-left: 2rem;
+    font-size: 1.5rem;
+    color: green;
+}
+
+
+.archive-h2 {
+    font-weight: lighter;
+    width: 75%;
+    font-size: 1.2rem;
+    margin-left: 2rem;
+}
+.archive-h2::before {
+    content: '';
+    display: block;
+    padding-top: 2.5rem;
+    margin-bottom: -2.5rem;
+    border-bottom: 2px solid var(--color-search-background);
+}

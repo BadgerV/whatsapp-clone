@@ -5,12 +5,13 @@
     justify-items: center;
     align-items: center;
     padding: 0.4rem;
+    border-bottom: 0.5px solid var(--color-search-background);
 }
 
 .search-input {
     width: 17rem;
     display: flex;
-    padding-left: 5rem;
+    padding-left: 4.5rem;
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
     height: 1.5rem;
