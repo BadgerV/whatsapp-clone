@@ -23,8 +23,8 @@
     position: absolute;
     font-size: 1.2rem;
     font-weight: lighter;
-    top: 11.5rem;
-    left: 1.3rem;
+    top: 11rem;
+    left: 2rem;
 }
 .search-input:active {
     outline: none;
