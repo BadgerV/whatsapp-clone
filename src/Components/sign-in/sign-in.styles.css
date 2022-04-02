@@ -1,0 +1,64 @@
+.sign-up-container {
+    position:absolute;
+    background: #659dbd;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    padding: 2.5rem;
+    border-radius: 0.2rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.sign-up-icon {
+    position: absolute;
+    left: 50%;
+    top: -6%;
+    transform: translateX(-50%);
+    font-size: 4rem;
+    color: #0a4669;
+}
+.sign-up-sign-up-text {
+    color: #fff;
+}
+
+.sign-in-input {
+    padding: 0.8rem;
+    margin: 0.4rem;
+    width: 100%;
+    border-radius: 1.5rem;
+    outline: none;
+    border: 0;
+}
+
+.sign-up-button {
+    background-color: white;
+    width: 110%;
+    color: #0a4669;
+    font-size: 0.8rem;
+    font-weight: bold;
+    outline: 0;
+    border: 0;
+    border-radius: 1.5rem;
+    padding: 0.8rem;
+}
+
+.sign-up-or-text {
+    color: #fff;
+    font-size: 0.8rem;
+    font-weight: 400;
+}
+.sign-up {
+    margin-top: 1.5rem;
+}
+.sign-up-account {
+    color: #fff;
+    margin-top: 0.5rem;
+}
+
+.sign-up-sign-in {
+    color: blue;
+    cursor: pointer;
+}

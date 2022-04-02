@@ -2,3 +2,16 @@
     overflow-y: scroll;
     max-height: 57vh;
 }
+.contact-directory::-webkit-scrollbar {
+    width: 10px;
+}
+ 
+.contact-directory::-webkit-scrollbar-track {
+    background-color: #fff;
+    border-radius: 100px;
+}
+ 
+.contact-directory::-webkit-scrollbar-thumb {
+    background-color: var(--icon-color);
+    border-radius: 100px;
+}
