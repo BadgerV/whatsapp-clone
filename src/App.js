@@ -12,12 +12,10 @@ import HomePage from './Components/home-page/homepage.component';
 const App = () => {
   return(
         <div className="app">
-          <HomePage />
-
-          {/* <Routes>
+          <Routes>
             <Route exact path = '/' element = {<SignUp />}></Route>
             <Route path = '/sign-in' element = {<SignIn />}></Route>
-          </Routes> */}
+          </Routes>
         </div>
   )
 }
