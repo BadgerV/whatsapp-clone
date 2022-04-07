@@ -6,6 +6,7 @@ const Archive = () => (
     <div className="archive">
         <BiArchiveIn className="archive-icon"/>
         <h2 className="archive-h2">Archived</h2>
+        <div className='archive-border-bottom' />
     </div>
 );
 

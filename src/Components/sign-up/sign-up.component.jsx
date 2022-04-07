@@ -1,29 +1,54 @@
 import React from 'react';
+import HomePage from '../home-page/homepage.component';
+import { useState } from 'react';
 import {Link} from 'react-router-dom';
-import {FaUserCircle} from 'react-icons/fa'
+import {FaUserCircle} from 'react-icons/fa';
+import { createUserWithEmailAndPassword } from 'firebase/auth';
+import { auth } from '../../utils/firebase';
 import './sign-up.styles.css';
-import backgroundImage from '../../Asset/wall.jpg.jpg'
 
 
 
-const SignUp = () => (
-    <div className='sign-up-background'>
+const SignUp = () => {
+
+
+    const [registerEmail, setRegisterEmail] = useState("");
+    const [registerusername, setRegisterUsername] = useState("");
+    const [registerPassword, setRegisterPassword] = useState("");
+    
+   
+
+    
+    const register = async () => {
+        try {
+            const user = await createUserWithEmailAndPassword(auth, registerEmail, registerPassword);
+            auth.currentUser.displayName = registerusername;
+        } catch (error) {
+            console.error(error)
+        }
+    }
+
+    
+
+    return (
+        <div className='sign-up-background'>
         <div className='sign-up-container'>
         <FaUserCircle className='sign-up-icon'/>
         <h1 className='sign-up-sign-up-text'>Sign Up Now</h1>
 
-        <input type='text' placeholder = 'Email' name='email' className='sign-in-input'/>
-        <input type='text' placeholder = 'Password' name='password' className='sign-in-input'/>
-        <input type='text' placeholder = 'Confirm Password' name='email' className='sign-in-input'/>
+        <input type='text' placeholder = 'Email' name='email' className='sign-in-input' onChange={(event) => setRegisterEmail(event.target.value)}/>
+        <input type='text' placeholder = 'Username' name='username' className='sign-in-input' onChange={(event) => setRegisterUsername(event.target.value)}/>
+        <input type='password' placeholder = 'Password' name='password' className='sign-in-input' onChange={(event) => setRegisterPassword(event.target.value)}/>
 
-        <button className='sign-up-button sign-up'>Sign Up</button>
+        <button className='sign-up-button sign-up' onClick={register}>Sign Up</button>
         <h2 className='sign-up-or-text'>OR</h2>
         <button className='sign-up-button twitter-button'>Login With Twitter</button>
 
-        <span className='sign-up-account'>I do not have an account <Link to ='/signin' className='sign-up-sign-in'>Sign In</Link></span>
+        <span className='sign-up-account'>I do not have an account <Link to ='/sign-in' className='sign-up-sign-in'>Sign In</Link></span>
 
     </div>
     </div>
-)
+    )
+}
 
 export default SignUp;

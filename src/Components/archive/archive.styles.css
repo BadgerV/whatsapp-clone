@@ -1,28 +1,26 @@
 .archive {
     display: flex;
-    height: 6vh;
-    flex-direction: row;
+    flex-direction: column;
+    padding: 0.5rem 0.5rem;
     align-items: center;
-    margin-bottom: 1rem;
+    position: relative;
+}
+
+.archive-h2 {
+    font-size: 1.2rem;
+    font-weight: 400;
+    margin-left: -8rem;
+    line-height: 1.3rem;
 }
 
 .archive-icon {
-    margin-left: 2rem;
-    font-size: 1.5rem;
-    color: green;
+    font-size: 1.3rem;
+    position: absolute;
+    top: 42%;
+    left: 10%;
+    transform: translate(-50%, -50%);
 }
-
-
-.archive-h2 {
-    font-weight: lighter;
-    width: 75%;
-    font-size: 1.2rem;
-    margin-left: 2rem;
-}
-.archive-h2::before {
-    content: '';
-    display: block;
-    padding-top: 2.5rem;
-    margin-bottom: -2.5rem;
-    border-bottom: 2px solid var(--color-search-background);
+.archive-border-bottom {
+    border: 0.5px solid var(--color-search-background);
+    width: 100%;
 }
