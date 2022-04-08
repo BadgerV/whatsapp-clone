@@ -5,6 +5,7 @@ import {Link} from 'react-router-dom';
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import './sign-in.styles.css';
 import {FaUserCircle} from 'react-icons/fa';
+import { createUserDocumentFromAuth } from '../../utils/firebase';
 import SignUp from '../sign-up/sign-up.component';
 
 
@@ -16,9 +17,9 @@ const SignIn = () => {
     
     const signIn = async () => {
         try {
-            const user = await signInWithEmailAndPassword(auth, signInEmail, signInPassword);
+            const {user} = await signInWithEmailAndPassword(auth, signInEmail, signInPassword);
             
-            console.log(user);
+            createUserDocumentFromAuth(user)
             
         } catch (error) {
             console.error(error)

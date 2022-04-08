@@ -1,11 +1,13 @@
 import React from 'react';
-import { SecondTopMenuContainer } from './second-top-menu.styles';
+import './second-top-menu.styles.css';
+import ProfilePic from '../../Asset/profile-pic.jpg';
 
 const SecondTopMenu = () => {
     return (
-        <SecondTopMenuContainer className="second-top-menu">
-            Hi User
-        </SecondTopMenuContainer>
+        <div className="second__top__menu__container">
+                <img src={ProfilePic} alt="DP" className='second__top__menu__image' />
+                <span className='second__top_menu_name-text'>Chinenye</span>
+        </div>
     )
 };
 

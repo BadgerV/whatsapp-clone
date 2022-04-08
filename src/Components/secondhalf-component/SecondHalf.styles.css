@@ -1,5 +1,6 @@
 .second-half {
-    width: 72vw;
+    margin: 0;
+    width: 70vw;
     height: 100vh;
     margin: 0.5rem;
     background-color: greenyellow;

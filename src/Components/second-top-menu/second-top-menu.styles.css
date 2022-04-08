@@ -1,0 +1,20 @@
+.second__top__menu__container {
+    height: 10vh;
+    width: 100%;
+    background: #1771D2;
+    padding: 0rem 0.5rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.second__top__menu__image {
+    height:85%;
+    border-radius: 50%;
+    aspect-ratio: 1 / 1;
+}
+.second__top_menu_name-text {
+    color: #fff;
+    font-size: 1.2rem;
+    margin-left: 0.5rem;
+}

@@ -1,5 +1,6 @@
 import { initializeApp } from "firebase/app";
 import {getAuth} from 'firebase/auth';
+import {getFirestore, doc, getDoc, setDoc, firestore} from 'firebase/firestore';
 
 const firebaseConfig = {
     apiKey: "AIzaSyAconQ9WpJD0l4QqDRzQxXkX86D-EHmVyU",
@@ -12,4 +13,17 @@ const firebaseConfig = {
   };
 
   const app = initializeApp(firebaseConfig);
-  export const auth = getAuth(app);
+  export const auth = getAuth(app); 
+
+  export const db = getFirestore();
+
+  export const createUserDocumentFromAuth = async(userAuth) =>{
+    const userDocRef = doc(db, 'users', userAuth.uid);
+    console.log(userDocRef);
+
+
+    const userSnapshot = await getDoc(userDocRef);
+    console.log(userSnapshot.exists());
+
+    //check data exists
+  }
