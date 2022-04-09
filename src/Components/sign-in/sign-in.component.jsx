@@ -19,7 +19,7 @@ const SignIn = () => {
         try {
             const {user} = await signInWithEmailAndPassword(auth, signInEmail, signInPassword);
             
-            createUserDocumentFromAuth(user)
+            const userDocRef = await createUserDocumentFromAuth(user)
             
         } catch (error) {
             console.error(error)

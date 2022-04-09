@@ -1,13 +1,17 @@
 .second__top__menu__container {
     height: 10vh;
     width: 100%;
-    background: #1771D2;
+    background: var(--desktop-notification-color);
     padding: 0rem 0.5rem;
     display: flex;
     flex-direction: row;
     align-items: center;
 }
 
+.second__top__menu__others {
+    display: flex;
+    gap: 43rem;
+}
 .second__top__menu__image {
     height:85%;
     border-radius: 50%;
@@ -18,3 +22,13 @@
     font-size: 1.2rem;
     margin-left: 0.5rem;
 }
+.second__top__menu__icon {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+.second__icon {
+    color: rgb(245, 241, 237);
+    font-size: 1.5rem;
+    cursor: pointer;
+}   
