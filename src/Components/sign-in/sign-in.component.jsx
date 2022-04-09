@@ -2,10 +2,9 @@ import React from 'react';
 import { auth } from '../../utils/firebase';
 import { useState } from 'react';
 import {Link} from 'react-router-dom';
-import { signInWithEmailAndPassword } from 'firebase/auth';
+import { signUserInWIthEmailAndPassword } from '../../utils/firebase';
 import './sign-in.styles.css';
 import {FaUserCircle} from 'react-icons/fa';
-import SignUp from '../sign-up/sign-up.component';
 
 
 
@@ -13,11 +12,11 @@ const SignIn = () => {
     const [signInEmail, setSignInEmail ] = useState("");
     const [signInPassword, setSignInPassword] = useState("");  
 
+
     
     const signIn = async () => {
         try {
-            const {user} = await signInWithEmailAndPassword(auth, signInEmail, signInPassword);
-            
+            const {user} = await signUserInWIthEmailAndPassword(signInEmail, signInPassword);
             
             
         } catch (error) {
