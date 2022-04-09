@@ -3,8 +3,7 @@ import HomePage from '../home-page/homepage.component';
 import { useState } from 'react';
 import {Link} from 'react-router-dom';
 import {FaUserCircle} from 'react-icons/fa';
-import { createUserWithEmailAndPassword } from 'firebase/auth';
-import { auth } from '../../utils/firebase';
+import { createAuthUserWithEmailAndPassword, createUserDocumentFromAuth } from '../../utils/firebase';
 import './sign-up.styles.css';
 
 
@@ -13,18 +12,23 @@ const SignUp = () => {
 
 
     const [registerEmail, setRegisterEmail] = useState("");
-    const [registerusername, setRegisterUsername] = useState("");
+    const [displayName, setRegisterUsername] = useState("");
     const [registerPassword, setRegisterPassword] = useState("");
     
-   
+   const resetFields = () => {
+       setRegisterEmail("");
+       setRegisterEmail("");
+       setRegisterPassword("");
+   }
 
     
     const register = async () => {
         try {
-            const user = await createUserWithEmailAndPassword(auth, registerEmail, registerPassword);
-            auth.currentUser.displayName = registerusername;
+            const {user} = await createAuthUserWithEmailAndPassword(registerEmail, registerPassword);
+            
+            const userDocRef = await createUserDocumentFromAuth(user, { displayName });
         } catch (error) {
-            console.error(error)
+            console.log(error)
         }
     }
 
@@ -40,7 +44,7 @@ const SignUp = () => {
         <input type='text' placeholder = 'Username' name='username' className='sign-in-input' onChange={(event) => setRegisterUsername(event.target.value)}/>
         <input type='password' placeholder = 'Password' name='password' className='sign-in-input' onChange={(event) => setRegisterPassword(event.target.value)}/>
 
-        <button className='sign-up-button sign-up' onClick={register}>Sign Up</button>
+        <button className='sign-up-button sign-up' onClick={register} >Sign Up</button>
         <h2 className='sign-up-or-text'>OR</h2>
         <button className='sign-up-button twitter-button'>Login With Twitter</button>
 
