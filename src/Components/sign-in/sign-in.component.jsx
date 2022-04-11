@@ -36,7 +36,7 @@ const SignIn = () => {
         <button className='sign-up-button sign-up' onClick={signIn}>Sign In</button>
         
 
-        <span className='sign-up-account'>I do not have an account <Link to ='/' className='sign-up-sign-in'>Sign Up</Link></span>
+        <span className='sign-up-account'>I do not have an account <Link to ='/sign-up' className='sign-up-sign-in'>Sign Up</Link></span>
 
     </div>
     </div>

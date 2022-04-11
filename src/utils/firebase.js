@@ -2,7 +2,7 @@ import { initializeApp } from "firebase/app";
 import {createUserWithEmailAndPassword, getAuth, signInWithEmailAndPassword,
   onAuthStateChanged,
   signOut} from 'firebase/auth';
-import {getFirestore, doc, getDoc, setDoc, firestore} from 'firebase/firestore';
+import {getFirestore, doc, getDoc, setDoc, collection, getDocs}from 'firebase/firestore';
 
 const firebaseConfig = {
     apiKey: "AIzaSyAconQ9WpJD0l4QqDRzQxXkX86D-EHmVyU",
@@ -60,4 +60,24 @@ const firebaseConfig = {
 
   export const signUserOut = async () => {
     const res = signOut(auth);
+  }
+
+  export const collectUserData = async () => {
+    const arrayOfUsers = [];
+    const arrayOfDisplayNames = [];
+    const userData = await collection(db, 'users');
+
+
+  
+    getDocs(userData).then((snapShot) => {
+      snapShot.docs.forEach((doc) => {
+        arrayOfUsers.push({...doc.data()})
+      })  
+
+      arrayOfUsers.forEach((user) => {
+        arrayOfDisplayNames.push(user.displayName)
+      })
+    })
+    
+    return [arrayOfUsers, arrayOfDisplayNames]
   }

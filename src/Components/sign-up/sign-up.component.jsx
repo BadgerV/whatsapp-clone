@@ -5,14 +5,19 @@ import {Link} from 'react-router-dom';
 import {FaUserCircle} from 'react-icons/fa';
 import { createAuthUserWithEmailAndPassword, createUserDocumentFromAuth, signUserOut } from '../../utils/firebase';
 import './sign-up.styles.css';
+import { UserContext } from '../../contexts/user.context';
+import LandingPage from '../landing-page/landing-page.component';
 
 
 
 const SignUp = () => {
 
-    signUserOut();
+    const nothing = () => {
 
+    }
 
+    const user = useContext(UserContext);
+    const currentUser = user.currentUser;
     const [registerEmail, setRegisterEmail] = useState("");
     const [displayName, setRegisterUsername] = useState("");
     const [registerPassword, setRegisterPassword] = useState(""); 
@@ -23,6 +28,10 @@ const SignUp = () => {
             const {user} = await createAuthUserWithEmailAndPassword(registerEmail, registerPassword);
             
             const userDocRef = await createUserDocumentFromAuth(user, { displayName });
+
+            
+
+            
 
         } catch (error) {
             console.log(error)
@@ -48,6 +57,9 @@ const SignUp = () => {
         <span className='sign-up-account'>I do not have an account <Link to ='/sign-in' className='sign-up-sign-in'>Sign In</Link></span>
 
     </div>
+        {
+            currentUser ? <LandingPage /> : nothing()
+        }
     </div>
     )
 }

@@ -25,5 +25,12 @@ code {
   --icon-color-hover:rgb(124, 121, 105);
   --desktop-notification-color: #53bdeb;
   --color-white : #ffffff;
-  --color-search-background : #f0f2f5
+  --color-search-background : #f0f2f5;
+
+  --background--color: #1f1f38; 
+  --background-color-2 : #2c2c6c;
+  --border-color : #44b5ff;
+  --color-primary-variant : rgba(77, 818, 255, 0.4);
+  --color-white : #fff;
+  --color-light: rgba(255, 255, 255, 0.6);
 }
